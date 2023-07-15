@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rajes/Desktop/ML%20Flow/mlruns/0/53e355b3a6ed410e94920bd790235082/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 53e355b3a6ed410e94920bd790235082
+run_name: illustrious-fish-209
+run_uuid: 53e355b3a6ed410e94920bd790235082
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1689444038332
+status: 1
+tags: []
+user_id: rajes

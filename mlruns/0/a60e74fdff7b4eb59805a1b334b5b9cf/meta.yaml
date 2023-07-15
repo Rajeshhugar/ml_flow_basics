@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/rajes/Desktop/ML%20Flow/mlruns/0/a60e74fdff7b4eb59805a1b334b5b9cf/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a60e74fdff7b4eb59805a1b334b5b9cf
+run_name: shivering-tern-441
+run_uuid: a60e74fdff7b4eb59805a1b334b5b9cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1689442245832
+status: 1
+tags: []
+user_id: rajes

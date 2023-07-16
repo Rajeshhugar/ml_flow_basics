@@ -75,26 +75,19 @@ if __name__ == "__main__":
         mlflow.log_metric("r2", r2)
         mlflow.log_metric("mae", mae)
 
-        
-        # # For remote server only (Dagshub)
-        remote_server_uri = "https://dagshub.com/Rajeshhugar/ml_flow_basics.mlflow"
-        mlflow.set_tracking_uri(remote_server_uri)
-
-
-        # For remote server only (AWS)
-        #remote_server_uri = "http://ec2-54-242-97-47.compute-1.amazonaws.com:5000"
-        #  mlflow.set_tracking_uri(remote_server_uri)
-
-
+        predictions = lr.predict(train_x)
+        signature = infer_signature(train_x, predictions)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
         # Model registry does not work with file store
-       # if tracking_url_type_store != "file":
+        if tracking_url_type_store != "file":
             # Register the model
             # There are other ways to use the Model Registry, which depends on the use case,
             # please refer to the doc for more information:
             # https://mlflow.org/docs/latest/model-registry.html#api-workflow
-        mlflow.sklearn.log_model(lr, "model", registered_model_name="Elasticmodel")
-     #   else:
-         #   mlflow.sklearn.log_model(lr, "model")
+            mlflow.sklearn.log_model(
+                lr, "model", registered_model_name="ElasticnetWineModel", signature=signature
+            )
+        else:
+            mlflow.sklearn.log_model(lr, "model", signature=signature)
